@@ -2,7 +2,7 @@ defmodule Perm do
   def stringtocharlist(string), do: String.to_char_list(string)
   def permute(''), do: ['']
   def permute(charlist), do: Enum.map(charlist, fn(char) ->
-    Enum.map(permute(List.delete(charlist, char)), fn(perm) -> [char]++perm end)
+    Enum.flat_map(permute(List.delete(charlist, char)), fn(perm) -> [char]++perm end)
     end)
   def permutestring(listofperms), do: Enum.map(listofperms, fn(perm)->List.to_string(perm) end)
 
