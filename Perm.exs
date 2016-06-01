@@ -12,8 +12,8 @@ defmodule Perm do
   def permutestring(listofperms), do: Enum.map(listofperms, fn(perm)->List.to_string(perm) end)
 
   def getallperm(string), do: stringtocharlist(string)|>permute|>permutestring
-  def contain_all_rots("", _), do: true
-  def contain_all_rots(strng, arr) do
+  def contain_all_perms("", _), do: true
+  def contain_all_perms(strng, arr) do
     Enum.all?(Enum.map(getallperm(strng), fn(perm)-> Enum.member?(arr, perm) end), fn(x)->x end)
   end
 
