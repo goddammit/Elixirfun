@@ -1,4 +1,5 @@
 defmodule Reducebystep do
+  #https://www.codewars.com/kata/56efab15740d301ab40002ee/train/elixir
   def som(a,b), do: a+b
   def mini(a,b), do: if a<b, do: a, else: b
   def maxi(a,b), do: if a>b, do: a, else: b
