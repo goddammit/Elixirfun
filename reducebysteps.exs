@@ -8,6 +8,6 @@ defmodule Reducebystep do
   def lcmu(a,b), do: round(a*b/gcdi(a,b))
   def oper_array(fun,[head|arr],init), do: oper_array(fun,[head|arr],init, [])
   def oper_array(_,[],_, acc), do: Enum.reverse(acc)
-  def oper_array(fun,[head|arr],init,acc), do: oper_array(fun,arr,init, [fun.(head,init)|acc])
+  def oper_array(fun,[head|arr],init,acc), do: oper_array(fun,arr,fun.(head,init), [fun.(head,init)|acc])
   #def oper_array(fun,[head|arr],init), do: [fun.(head,init)|oper_array(fun,arr,fun.(head,init))]
 end
